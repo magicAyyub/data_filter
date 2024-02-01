@@ -1,9 +1,9 @@
-from dataManagement.data import Data
+from src.dataManagement.data import Data
 import csv
 import json
 import xml.etree.ElementTree as ET
 import yaml
-from  ..customException.save_exception import EmptyDataListError
+from  src.customException.save_exception import EmptyDataListError
 
 class DataSet:
     """Représente un ensemble de donnée ansi que le traitement à effectuer sur ces derniers"""
