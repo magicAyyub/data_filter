@@ -12,9 +12,7 @@ from  dataManagement.dataset import DataSet
 
 def main():
     ds = DataSet()
-    # ds.load_json("./src/dataSource/test/test.json")
-    ds.load_csv("./src/dataSource/test.csv")
-    print(ds.all_to_dict())
+    print(ds)
     
 if __name__ == '__main__':
     main()

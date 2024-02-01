@@ -12,8 +12,25 @@ class DataSet:
     
     def __init__(self) -> None:
         self.data_list = []
+        self.load_json("src/dataSource/test.json")
+    
+    def __str__(self) -> str:
+        
+        data_array = list(map(lambda data: [f"{elmt} |" for elmt in data.get().values()],self.data_list))      
+        data_string = ""
+        for element in data_array:
+            if isinstance(element,list):
+                data_string += self.list_to_string(element)+"\n"
+            else:
+                data_string += str(element)+"\n" 
+        return data_string
+            
      
-     
+    def list_to_string(self, data_array:list):
+        data_string = "| "
+        data_string += ' '.join([str(elem) for elem in data_array])
+        return data_string
+        
         
     def add_data(self, data:Data) -> None:
         """Rajoute une donnée dans l'ensemble de donnée"""
