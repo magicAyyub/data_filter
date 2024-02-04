@@ -8,11 +8,14 @@ script_path = Path(__file__).resolve()
 project_root = script_path.parent.parent  # Deux niveaux au-dessus pour atteindre le répertoire du projet
 sys.path.append(str(project_root))
 
-from  dataManagement.dataset import DataSet 
+from  src.dataManagement.dataset import DataSet 
+from  src.operations.filter import Filter 
 
 def main():
     ds = DataSet()
-    print(ds)
+    
+    filtered_data = ds.filter_data(Filter.filter_by_list_max, "grade", 20)
+    print(filtered_data)
     
 if __name__ == '__main__':
     main()

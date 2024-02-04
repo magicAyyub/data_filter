@@ -8,7 +8,12 @@ class Data:
     
     
     
-    def get(self) -> dict:
+    def value(self) -> dict:
         """Retourne la classe sous forme de dictionnaire """
         
         return self.data
+    
+    def get(self, key, default):
+        """ Retourne la valeur d'un champ"""
+        
+        return getattr(self,key,default)

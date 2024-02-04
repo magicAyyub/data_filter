@@ -40,3 +40,9 @@ class DataConverter:
             elif text.lower() == 'false':
                 return False
             return text
+    
+    @staticmethod   
+    def list_to_string(data_array:list):
+        data_string = "| "
+        data_string += ' '.join([str(elem) for elem in data_array])
+        return data_string

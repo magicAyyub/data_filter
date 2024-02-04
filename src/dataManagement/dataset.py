@@ -2,9 +2,11 @@ import csv
 import json
 import xml.etree.ElementTree as ET
 import yaml
+from typing import Any, Callable, List
 from src.dataManagement.data import Data
 from src.dataManagement.dataconverter import DataConverter
 from  src.customException.save_exception import EmptyDataListError
+from src.operations.filter import Filter
 
 
 class DataSet:
@@ -16,20 +18,17 @@ class DataSet:
     
     def __str__(self) -> str:
         
-        data_array = list(map(lambda data: [f"{elmt} |" for elmt in data.get().values()],self.data_list))      
+        data_array = list(map(lambda data: [f"{elmt} |" for elmt in data.value().values()],self.data_list))      
         data_string = ""
         for element in data_array:
             if isinstance(element,list):
-                data_string += self.list_to_string(element)+"\n"
+                data_string += DataConverter.list_to_string(element)+"\n"
             else:
                 data_string += str(element)+"\n" 
         return data_string
             
      
-    def list_to_string(self, data_array:list):
-        data_string = "| "
-        data_string += ' '.join([str(elem) for elem in data_array])
-        return data_string
+
         
         
     def add_data(self, data:Data) -> None:
@@ -40,7 +39,7 @@ class DataSet:
     def all_to_dict(self) -> list:
         """Converti et retourne la liste des classes Data sous forme de dictionnaire."""
         
-        return [data.get() for data in self.data_list]
+        return [data.value() for data in self.data_list]
      
     
     def load_csv(self, file_path: str) -> None:
@@ -144,3 +143,17 @@ class DataSet:
                 yaml.dump(self.all_to_dict(), file)      
         else:
             raise EmptyDataListError()
+        
+    def filter_data(self, filter_method: Callable[[List[Data], Any], List[Data]], *args, **kwargs) -> List[Data]:
+        """
+        Applique le filtre spécifié sur les données de l'ensemble de données.
+
+        Args:
+            filter_method (Callable[[List[Data], Any], List[Data]]): La méthode de filtre à appliquer.
+            *args: Les arguments positionnels à passer à la méthode de filtre.
+            **kwargs: Les arguments nommés à passer à la méthode de filtre.
+
+        Returns:
+            List[Data]: La liste des données filtrées.
+        """
+        return filter_method(self.data_list, *args, **kwargs)
