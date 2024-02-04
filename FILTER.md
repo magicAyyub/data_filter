@@ -64,4 +64,7 @@ filtered_data = dataset.filter_data(Filter.filter_by_list_average, "notations", 
 # Comparer les champs "prix" et "quantites" et filtrer les données où le produit est supérieur à 5000
 filtered_data = dataset.filter_data(Filter.filter_by_combined_fields, "prix", "quantites", 5000)
 
+# Filtrer les données en fonction d'une condition sur les statistiques globales d'une liste associée à une clé spécifique
+filtered_data_global_statistics = dataset.filter_data(Filter.filter_by_global_statistics, "quantites", lambda x: sum(x)/len(x) > 90)
+
 ```
