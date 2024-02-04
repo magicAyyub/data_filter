@@ -1,100 +1,25 @@
-# Filter
+#  Filter
 
-La classe Filter offre des méthodes statiques pour filtrer une liste d'objets de type Data en fonction de critères spécifiques. Ces méthodes facilitent la création de filtres flexibles et personnalisés pour répondre à différents besoins de filtrage.
+La classe Filter offre des méthodes statiques pour filtrer une liste d'objets de type Data en fonction de critères spécifiques. Ces méthodes facilitent la création de filtres flexibles et personnalisés pour répondre à différents besoins de filtrage. 
 
-## Méthodes de filtrage disponibles
 
-### filter_by_string_lexicographical
+## Méthodes disponibles dans la classe Filter
 
-Filtre les données en fonction d'une comparaison lexicographique d'une valeur de type chaîne de caractères associée à une clé spécifique.
+Les méthodes de filtrage disponible sont : 
 
-```python
-Filter.filter_by_string_lexicographical(data_list: List[Data], key: str, value: str) -> List[Data]
-```
+- `filter_by_string_contains`
+- `filter_by_string_starts_with`
+- `filter_by_string_ends_with`
+- `filter_by_list_all_elements`
+- `filter_by_list_min`
+- `filter_by_list_max`
+- `filter_by_list_average`
+- `compare_fields`
+- `filter_by_global_statistics`.
 
-### filter_by_string_contains
+## Fonctionnement du filtre 
 
-Filtre les données en fonction de la présence d'une sous-chaîne dans une valeur de type chaîne de caractères associée à une clé spécifique.
-
-```python
-Filter.filter_by_string_contains(data_list: List[Data], key: str, substring: str) -> List[Data]
-```
-
-### filter_by_string_starts_with
-
-Filtre les données en fonction du début d'une valeur de type chaîne de caractères associée à une clé spécifique.
-
-```python
-Filter.filter_by_string_starts_with(data_list: List[Data], key: str, prefix: str) -> List[Data]
-```
-
-### filter_by_string_ends_with
-
-Filtre les données en fonction de la fin d'une valeur de type chaîne de caractères associée à une clé spécifique.
-
-```python
-Filter.filter_by_string_ends_with(data_list: List[Data], key: str, suffix: str) -> List[Data]
-```
-
-### filter_by_list_all_elements
-
-Filtre les données en fonction de la présence de tous les éléments d'une liste associée à une clé spécifique.
-
-```python
-Filter.filter_by_list_all_elements(data_list: List[Data], key: str, element: Any) -> List[Data]
-```
-
-### filter_by_list_min
-
-Filtre les données en fonction de la valeur minimale d'une liste associée à une clé spécifique.
-
-```python
-Filter.filter_by_list_min(data_list: List[Data], key: str, min_value: Any) -> List[Data]
-```
-
-### filter_by_list_max
-
-Filtre les données en fonction de la valeur maximale d'une liste associée à une clé spécifique.
-
-```python
-Filter.filter_by_list_max(data_list: List[Data], key: str, max_value: Any) -> List[Data]
-```
-
-### filter_by_list_average
-
-Filtre les données en fonction d'une condition sur la moyenne des valeurs d'une liste associée à une clé spécifique.
-
-```python
-Filter.filter_by_list_average(data_list: List[Data], key: str, average_condition: Callable[[Any], bool]) -> List[Data]
-```
-
-### compare_fields
-
-Filtre les données en comparant deux champs spécifiques.
-
-```python
-Filter.compare_fields(data_list: List[Data], field1: str, field2: str) -> List[Data]
-```
-
-### filter_by_global_statistics
-
-Filtre les données en fonction d'une condition sur les statistiques globales d'une liste associée à une clé spécifique.
-
-```python
-Filter.filter_by_global_statistics(data_list: List[Data], key: str, condition: Callable[[Any], bool]) -> List[Data]
-```
-
-### filter_by_combined_fields
-
-Filtre les données en fonction d'une combinaison de deux champs dépassant un seuil spécifique.
-
-```python
-Filter.filter_by_combined_fields(data_list: List[Data], field1: str, field2: str, threshold: Any) -> List[Data]
-```
-
-## Méthodes de filtrage dans DataSet
-
-La méthode `filter_data` prend une fonction de filtrage en tant que paramètre et renvoie une liste de données filtrées.
+La méthode `filter_data` prend une fonction de filtrage de `Filter` en tant que premier argument et les arguments de filtrage supplémentaires en tant qu'arguments suivants. Cela offre une flexibilité pour appliquer différents filtres avec divers critères.
 
 ```python
 class DataSet:
@@ -110,12 +35,33 @@ class DataSet:
             List[Data]: Une liste de données filtrées.
         """
         return filter_function(self.data_list)
+```
 
-# Exemple d'utilisation :
+
+## Exemple d'utilisation des méthodes de filtrage dans DataSet :
+
+```python
 dataset = DataSet()
 
 # Filtrer les données où le champ "nom" contient la sous-chaîne "John"
 filtered_data = dataset.filter_data(Filter.filter_by_string_contains, "nom", "John")
-```
 
-Cette méthode prend une fonction de filtrage de `Filter` en tant que premier argument et les arguments de filtrage supplémentaires en tant qu'arguments suivants. Cela offre une flexibilité pour appliquer différents filtres avec divers critères.
+# Filtrer les données où le champ "nom" contient la sous-chaîne "John"
+filtered_data = dataset.filter_data(Filter.filter_by_string_contains, "nom", "John")
+
+# Filtrer les données où le champ "description" commence par "Java"
+filtered_data = dataset.filter_data(Filter.filter_by_string_starts_with, "description", "Java")
+
+# Filtrer les données où la liste "tags" contient l'élément "Python"
+filtered_data = dataset.filter_data(Filter.filter_by_list_all_elements, "tags", "Python")
+
+# Filtrer les données où le champ "prix" est supérieur à 55
+filtered_data = dataset.filter_data(Filter.filter_by_list_min, "prix", 55)
+
+# Filtrer les données où la moyenne des notations est supérieure à 4.0
+filtered_data = dataset.filter_data(Filter.filter_by_list_average, "notations", lambda x: sum(x)/len(x) > 4.0)
+
+# Comparer les champs "prix" et "quantites" et filtrer les données où le produit est supérieur à 5000
+filtered_data = dataset.filter_data(Filter.filter_by_combined_fields, "prix", "quantites", 5000)
+
+```
