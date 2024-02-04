@@ -14,7 +14,7 @@ from  src.operations.filter import Filter
 def main():
     ds = DataSet()
     
-    filtered_data = ds.filter_data(Filter.filter_by_list_max, "grade", 20)
+    filtered_data = ds.filter_data(Filter.filter_by_list_all_elements, "grade", 9)
     print(filtered_data)
     
 if __name__ == '__main__':

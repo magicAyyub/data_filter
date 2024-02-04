@@ -1,5 +1,5 @@
 [{"first_name":"Zared","last_name":"Nuscha","age":1,"apprentice":true,"grade":[14,12,20,18,4]},
-{"first_name":"Ashil","last_name":"Sugg","age":2,"apprentice":false,"grade":[14,12,20,18,4]},
+{"first_name":"Ashil","last_name":"Sugg","age":2,"apprentice":false,"grade":[14,12,20,9,4]},
 {"first_name":"Wendell","last_name":"Astman","age":3,"apprentice":true,"grade":[14,12,20,18,4]},
 {"first_name":"Currey","last_name":"Abramovitch","age":4,"apprentice":false,"grade":[14,12,20,18,4]},
 {"first_name":"Tito","last_name":"Packer","age":5,"apprentice":true,"grade":[14,12,20,18,4]},
