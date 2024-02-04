@@ -17,9 +17,9 @@ Les méthodes de filtrage disponible sont :
 - `compare_fields`
 - `filter_by_global_statistics`.
 
-## Fonctionnement du filtre 
+## Fonctionnement des filtre 
 
-La méthode `filter_data` prend une fonction de filtrage de `Filter` en tant que premier argument et les arguments de filtrage supplémentaires en tant qu'arguments suivants. Cela offre une flexibilité pour appliquer différents filtres avec divers critères.
+La méthode `filter_data` de la classe `DataSet` prend une fonction de filtrage de `Filter` en tant que premier argument et les arguments de filtrage supplémentaires en tant qu'arguments suivants. Cela offre une flexibilité pour appliquer différents filtres avec divers critères.
 
 ```python
 class DataSet:
