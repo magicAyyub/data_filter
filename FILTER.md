@@ -92,12 +92,7 @@ Filtre les données en fonction d'une combinaison de deux champs dépassant un s
 Filter.filter_by_combined_fields(data_list: List[Data], field1: str, field2: str, threshold: Any) -> List[Data]
 ```
 
-Absolument, clarifions l'utilisation du `Filter` dans la classe `DataSet` dans le README :
-
-
-### Méthodes de filtrage dans DataSet
-
-#### `filter_data`
+## Méthodes de filtrage dans DataSet
 
 La méthode `filter_data` prend une fonction de filtrage en tant que paramètre et renvoie une liste de données filtrées.
 
