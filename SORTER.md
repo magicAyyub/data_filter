@@ -18,7 +18,6 @@ La méthode `sort_data` de la classe `DataSet` prend une fonction de trie de `So
 
 ```python
 class DataSet:
-    # ...
 
     def sort_data(self, sort_function: Callable[[List[Data]], List[Data]]) -> List[Data]:
         """Trie les Data dans DataSet en utilisant une fonction de trie.
@@ -46,7 +45,7 @@ sorted_data_age_desc = dataset.sort_data(Sorter.sort_by_field, "age", reverse=Tr
 # Trier les données par score puis par âge
 sorted_data_score_age = dataset.sort_data(Sorter.sort_by_multiple_fields, ["score", "age"])
 
-# Tri personnalisé à l'aide d'une fonction de valeur
+# Tri personnalisé à l'aide d'une fonction de valeur (Ici trie par le nombre de caractère du champ "name")
 sorted_data_custom = dataset.sort_data(Sorter.sort_by_global_value, "name", lambda x: len(x), reverse=True)
 
 # Tri personnalisé avec critères multiplesTri personnalisé avec critères multiples
