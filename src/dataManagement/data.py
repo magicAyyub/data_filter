@@ -8,7 +8,7 @@ class Data:
     
     
     
-    def value(self) -> dict:
+    def to_dict(self) -> dict:
         """Retourne la classe sous forme de dictionnaire """
         
         return self.data

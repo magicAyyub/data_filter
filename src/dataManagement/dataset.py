@@ -157,3 +157,17 @@ class DataSet:
             List[Data]: La liste des données filtrées.
         """
         return filter_method(self.data_list, *args, **kwargs)
+    
+    def sort_data(self, sort_function: Callable[[List[Data]], List[Data]], *args, **kwargs) -> List[Data]:
+        """Trie les données dans le DataSet.
+
+        Args:
+            sort_function (Callable[[List[Data]], List[Data]]): La méthode de trie à appliquer.
+            *args: Liste d'arguments de longueur variable.
+            **kwargs: Arguments de mots-clés arbitraires.
+
+        Returns:
+            List[Data]: Une liste de données triées.
+        """
+        sorted_data = sort_function(self.data_list, *args, **kwargs)
+        return sorted_data
