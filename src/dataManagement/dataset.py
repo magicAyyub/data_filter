@@ -2,11 +2,11 @@ import csv
 import json
 import xml.etree.ElementTree as ET
 import yaml
-from typing import Any, Callable, List
+from typing import Any, Callable, List, Dict,Union
 from src.dataManagement.data import Data
 from src.dataManagement.dataconverter import DataConverter
 from  src.customException.save_exception import EmptyDataListError
-from src.operations.filter import Filter
+from src.operations.stat import Stats
 
 
 class DataSet:
@@ -171,3 +171,11 @@ class DataSet:
         """
         sorted_data = sort_function(self.data_list, *args, **kwargs)
         return sorted_data
+
+    def generate_stats(self) -> Dict[str, Dict[str, Union[float, int, Dict[Any, int]]]]:
+        """Génère des statistiques pour l'ensemble des champs de la DataSet.
+
+        Returns:
+            Dict[str, Dict[str, Union[float, int, Dict[Any, int]]]]: Un dictionnaire contenant les statistiques pour chaque champ.
+        """
+        return Stats.generate_stats(self.data_list)

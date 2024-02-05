@@ -15,9 +15,7 @@ from  src.operations.sorter import Sorter
 def main():
     ds = DataSet()
     
-    sorted_data = ds.filter_data(Sorter.sort_by_global_value, "first_name", lambda x: len(x), reverse=True)
-    for data in sorted_data:
-        print(data.to_dict())
+    print(ds.generate_stats())
     
 if __name__ == '__main__':
     main()

@@ -13,7 +13,8 @@ class Data:
         
         return self.data
     
-    def get(self, key, default):
+    def get_field_value(self, key, default):
         """ Retourne la valeur d'un champ"""
         
         return getattr(self,key,default)
+    
