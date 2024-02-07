@@ -2,7 +2,7 @@ Ci-dessous, Un exemple de chaque classe et expliqué comment elles pourraient ê
 
 1. **Data** : Cette classe représente une seule entrée de données. Par exemple, si nous avons une entrée de données pour un étudiant avec un prénom, un nom, un âge, un statut d'apprenti et des notes, on peut créer une instance de `Data` pour cet étudiant :
 
-   ````python
+   ```python
        data_dict = {"nom":"John", "lastname":"Doe", "age":20, "apprentice":True, "grades" = [12, 18, 14]}
        student = Data(data_dict)
    ```
