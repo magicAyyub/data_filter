@@ -12,7 +12,7 @@ class Stats:
         stats = {}
 
         for field_name in data_list[0].to_dict().keys():
-            field_type = type(data_list[0].get_field_value(field_name, None))
+            field_type = type(data_list[0].get_field_value(field_name, None)) 
 
             if field_type in [int, float]:
                 stats[field_name] = Stats.generate_number_stats(data_list, field_name)
@@ -20,8 +20,7 @@ class Stats:
                 stats[field_name] = Stats.generate_boolean_stats(data_list, field_name)
             elif field_type == list:
                 stats[field_name] = Stats.generate_list_stats(data_list, field_name)
-            # On rajoutera des statistiques ici au besoin
-            else:
+            else: # On rajoutera des statistiques ici au besoin 
                 pass
 
         return stats
