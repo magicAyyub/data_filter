@@ -2,13 +2,14 @@ Ci-dessous, Un exemple de chaque classe et expliqué comment elles pourraient ê
 
 1. **Data** : Cette classe représente une seule entrée de données. Par exemple, si nous avons une entrée de données pour un étudiant avec un prénom, un nom, un âge, un statut d'apprenti et des notes, on peut créer une instance de `Data` pour cet étudiant :
 
-    ```python
-    student = Data(firstname="John", lastname="Doe", age=20, apprentice=True, grades=[15, 18, 14])
-    ```
+   ````python
+       data_dict = {"nom":"John", "lastname":"Doe", "age":20, "apprentice":True, "grades" = [12, 18, 14]}
+       student = Data(data_dict)
+   ```
 
 
 
-2. **DataSet** : Cette classe contient une liste de `Data`. VNous pouvons ajouter des instances de `Data` à cette liste, puis utiliser les méthodes de `DataSet` pour manipuler ces données. Par exemple :
+3. **DataSet** : Cette classe contient une liste de `Data`. Nous pouvons ajouter des instances de `Data` à cette liste, puis utiliser les méthodes de `DataSet` pour manipuler ces données. Par exemple :
 
     ```python
     students = DataSet()
@@ -19,7 +20,7 @@ Ci-dessous, Un exemple de chaque classe et expliqué comment elles pourraient ê
 
 
 
-3. **Filter** : Cette classe est utilisée pour filtrer les données dans `DataSet`. Par exemple, si nous voulons filtrer les étudiants qui ont plus de 20 ans, on pourra créer une instance de `Filter` et l'appliquer à notre `DataSet` :
+4. **Filter** : Cette classe est utilisée pour filtrer les données dans `DataSet`. Par exemple, si nous voulons filtrer les étudiants qui ont plus de 20 ans, on pourra créer une instance de `Filter` et l'appliquer à notre `DataSet` :
 
     ```python
     age_filter = Filter(threshold=20)
@@ -28,7 +29,7 @@ Ci-dessous, Un exemple de chaque classe et expliqué comment elles pourraient ê
 
 
 
-4. **Sorter** : Cette classe est utilisée pour trier les données dans `DataSet`. Par exemple, si nous voulons trier les étudiants par ordre alphabétique du prénom, vous pouvez créer une instance de `Sorter` et l'appliquer à votre `DataSet` :
+5. **Sorter** : Cette classe est utilisée pour trier les données dans `DataSet`. Par exemple, si nous voulons trier les étudiants par ordre alphabétique du prénom, vous pouvez créer une instance de `Sorter` et l'appliquer à votre `DataSet` :
 
     ```python
     name_sorter = Sorter()
@@ -37,7 +38,7 @@ Ci-dessous, Un exemple de chaque classe et expliqué comment elles pourraient ê
 
 
 
-5. **Stats** : Cette classe est utilisée pour produire des statistiques à partir des données dans `DataSet`. Par exemple, si nous voulons calculer l'âge moyen des étudiants, on pourra créer une instance de `Stats` et l'appliquer à votre `DataSet` :
+6. **Stats** : Cette classe est utilisée pour produire des statistiques à partir des données dans `DataSet`. Par exemple, si nous voulons calculer l'âge moyen des étudiants, on pourra créer une instance de `Stats` et l'appliquer à votre `DataSet` :
 
     ```python
     age_stats = Stats()
@@ -46,7 +47,7 @@ Ci-dessous, Un exemple de chaque classe et expliqué comment elles pourraient ê
 
 
 
-6. **Interface** : Cette classe gère l'interaction avec l'utilisateur. Par exemple, elle pourrait avoir une méthode pour demander à l'utilisateur quelles opérations il souhaite effectuer sur les données :
+7. **Interface** : Cette classe gère l'interaction avec l'utilisateur. Par exemple, elle pourrait avoir une méthode pour demander à l'utilisateur quelles opérations il souhaite effectuer sur les données :
 
     ```python
     interface = Interface()
@@ -56,7 +57,7 @@ Ci-dessous, Un exemple de chaque classe et expliqué comment elles pourraient ê
 
 
 
-7. **History** : Cette classe gère l'historique des opérations de filtrage. Par exemple, après chaque opération de filtrage, nous pouvons ajouter l'état actuel des données à l'historique :
+8. **History** : Cette classe gère l'historique des opérations de filtrage. Par exemple, après chaque opération de filtrage, nous pouvons ajouter l'état actuel des données à l'historique :
 
     ```python
     history = History()
