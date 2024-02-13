@@ -155,7 +155,7 @@ class Interface:
         """Affiche les statistiques des données. (Pas encore implémenté)"""
         
         if not self.dataset.data_list:
-            messagebox.showerror("Erreur", "Aucune donnée à afficher.")
+            messagebox.showerror("Erreur", "Aucune donnée à afficher veuillez choisir un fichier source de données.")
             return 
         
         self.dashboard_frame.destroy()
@@ -165,7 +165,7 @@ class Interface:
         data = self.dataset.all_to_dict()
         nombre_eleves_total = len(data)
        
-        print(f"{nombre_eleves_total} élèves")
+        print(f"{nombre_eleves_total} élèves") # A supprimer et remplacer par l'affichage dans l'interface graphique
         
        
         
