@@ -87,11 +87,8 @@ class Interface:
         self.dashboard_frame = self.__create_frame(300, 60, 1070, 690, self.bg_color)
         self.create_label(self.dashboard_frame, "Tableau de bord", "times new roman", 13, "bold", "#0064d3", self.bg_color, 325, 70)
     
-    def create_student_statistics_frame(self):
-        self.etiquette_nombre_eleves = Label(self.root, text="Nombre total d'élèves\n : ", font=("times new roman", 12), bg="#eff5f6", fg="#0064d3")
-        self.etiquette_nombre_eleves.place(x=0, y=50, width=1366)
     
-    def create_label(self, frame, text, font_family, font_size, font_weight, text_color, bg_color, x, y):
+    def create_label(self, frame, text, text_color, bg_color, x, y, font_family="times new roman", font_size=12, font_weight="normal"):
         label = Label(frame, text=text, font=(font_family, font_size, font_weight), fg=text_color, bg=bg_color)
         label.place(x=x, y=y)
     
