@@ -16,10 +16,10 @@ class Interface:
         self.root = Tk() # Fenêtre principale
         self.title = "Tableau de bord"
         self.size = "1200x768"
-        self.image_folder = "src/interface/Images"
+        self.image_folder = "src/app/Images"
         self.icon_path = f"{self.image_folder}/icon.png"
         self.bg_color = "#eff5f6"
-        self.sound_folder = r"src/interface/Son"
+        self.sound_folder = r"src/app/Son"
         self.configure_window()
     
         
