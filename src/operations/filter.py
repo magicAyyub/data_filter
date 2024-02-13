@@ -3,6 +3,8 @@ from typing import Any, Callable, List
 
 
 class Filter:
+    """Classe contenant des méthodes pour filtrer des données en fonction de différents critères."""
+    
     @staticmethod
     def filter_by_string_lexicographical(data_list: List[Data], key: str, value: str) -> List[Data]:
         """Filtre les données en fonction d'une comparaison lexicographique d'une valeur de type chaîne de caractères associée à une clé spécifique."""

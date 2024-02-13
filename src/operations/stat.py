@@ -2,6 +2,8 @@ from typing import List, Union, Dict
 from src.dataManagement.data import Data
 
 class Stats:
+    """Classe contenant des méthodes pour générer des statistiques sur des données."""
+    
     @staticmethod
     def generate_stats(data_list: List[Data]) -> Dict[str, Dict[str, Union[float, int, str, Dict[str, float]]]]:
         """Génère des statistiques pour l'ensemble des champs de la liste de données."""

@@ -14,11 +14,10 @@ class DataSet:
     
     def __init__(self) -> None:
         self.data_list = []
-        self.load_json("src/dataSource/test.json")
     
     def __str__(self) -> str:
         
-        data_array = list(map(lambda data: [f"{elmt} |" for elmt in data.value().values()],self.data_list))      
+        data_array = list(map(lambda data: [f"{elmt} |" for elmt in data.to_dict().values()],self.data_list))      
         data_string = ""
         for element in data_array:
             if isinstance(element,list):
@@ -39,7 +38,7 @@ class DataSet:
     def all_to_dict(self) -> list:
         """Converti et retourne la liste des classes Data sous forme de dictionnaire."""
         
-        return [data.value() for data in self.data_list]
+        return [data.to_dict() for data in self.data_list]
      
     
     def load_csv(self, file_path: str) -> None:

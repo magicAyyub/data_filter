@@ -2,6 +2,9 @@ from src.dataManagement.data import Data
 from typing import Any, Callable, List
 
 class Sorter:
+    """Classe contenant des méthodes pour trier des données en fonction de différents critères."""
+    
+    
     @staticmethod
     def sort_by_field(data_list: List[Data], key: str, reverse: bool = False) -> List[Data]:
         """Trie les données en fonction d'un champ spécifique."""
