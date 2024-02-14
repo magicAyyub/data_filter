@@ -56,7 +56,7 @@ class Interface:
         self.create_data_source_button()
         self.create_exit_button()
         self.create_dashboard_frame()
-        self.create_student_statistics_frame()
+        self.create_data_list_button()
       
       
     # ----------------- Méthodes de création de composants
@@ -79,13 +79,17 @@ class Interface:
         self.create_label_with_image(self.menu, f"{self.image_folder}/source.png", 35, 400)
         self.create_button(self.menu, "Source de données", self.load_data, 100, 420)
     
+    def create_data_list_button(self):
+        self.create_label_with_image(self.menu, f"{self.image_folder}/data_list.png", 35, 200)
+        self.create_button(self.menu, "Liste des données", self.show_data_list, 100, 220)
+    
     def create_exit_button(self):
         self.create_label_with_image(self.menu, f"{self.image_folder}/quit.png", 35, 510)
         self.create_button(self.menu, "Quitter", self.close, 100, 520)
     
     def create_dashboard_frame(self):
         self.dashboard_frame = self.__create_frame(300, 60, 1070, 690, self.bg_color)
-        self.create_label(self.dashboard_frame, "Tableau de bord", "times new roman", 13, "bold", "#0064d3", self.bg_color, 325, 70)
+        self.create_label(self.dashboard_frame, "Tableau de bord", "#0064d3", self.bg_color, 325, 70)
     
     
     def create_label(self, frame, text, text_color, bg_color, x, y, font_family="times new roman", font_size=12, font_weight="normal"):
@@ -152,7 +156,7 @@ class Interface:
                 return
         
     def show_statistics(self):
-        """Affiche les statistiques des données. (Pas encore implémenté)"""
+        """Affiche les statistiques des données."""
         
         if not self.dataset.data_list:
             messagebox.showerror("Erreur", "Aucune donnée à afficher veuillez choisir un fichier source de données.")
@@ -160,14 +164,83 @@ class Interface:
         
         self.dashboard_frame.destroy()
         self.dashboard_frame = self.__create_frame(300, 60, 1070, 690, self.bg_color)
-        self.create_label(self.dashboard_frame, "Tableau de bord", "times new roman", 13, "bold", "#0064d3", self.bg_color, 325, 70)
+        self.create_label(self.dashboard_frame, "Tableau de bord", "#0064d3", self.bg_color, 325, 70)
+        
+        data_stats = self.dataset.generate_stats()
+
+        # Affichage graphique des statistiques
+        fig, axes = plt.subplots(1, len(data_stats), figsize=(15, 5))
+
+        for i, (nom_champ, stats_champ) in enumerate(data_stats.items()):
+            if isinstance(stats_champ, dict):
+                # Traitement spécifique pour chaque type de champ
+                if 'min' in stats_champ and 'max' in stats_champ and 'avg' in stats_champ:
+                    # Champ représentant un nombre
+                    labels = ['Minimum', 'Maximum', 'Moyenne']
+                    values = list(stats_champ.values())
+                    axes[i].bar(labels, values, color=['blue', 'orange', 'green'])
+                    axes[i].set_title(f'Champ représentant un nombre')
+                    axes[i].set_xlabel('Statistique')
+                    axes[i].set_ylabel('Valeur')
+
+                elif 'true_percentage' in stats_champ and 'false_percentage' in stats_champ:
+                    # Champ représentant un booléen
+                    labels = ['Vrai', 'Faux']
+                    values = list(stats_champ.values())
+                    axes[i].pie(values, labels=labels, autopct='%1.1f%%', colors=['green', 'red'])
+                    axes[i].set_title(f'Champ représentant un booléen')
+
+                elif 'min_len' in stats_champ and 'max_len' in stats_champ and 'avg_len' in stats_champ:
+                    # Champ représentant une liste
+                    labels = ['Longueur Min', 'Longueur Max', 'Longueur Moyenne']
+                    values = list(stats_champ.values())
+                    axes[i].bar(labels, values, color=['red', 'yellow', 'green'])
+                    axes[i].set_title(f'Champ représentant une liste')
+                    axes[i].set_xlabel('Type')
+                    axes[i].set_ylabel('Longueur')
+
+        plt.tight_layout()
+        plt.show()
+        # canvas = FigureCanvasTkAgg(fig, master=self.dashboard_frame)
+        # canvas.draw()
+        # canvas.get_tk_widget().place(x=0, y=100)
+        
+    def show_data_list(self):
+        """Affiche la liste des données."""
+        
+        if not self.dataset.data_list:
+            messagebox.showerror("Erreur", "Aucune donnée à afficher veuillez choisir un fichier source de données.")
+            return 
+        
+        self.dashboard_frame.destroy()
+        self.dashboard_frame = self.__create_frame(300, 60, 1070, 690, self.bg_color)
+        self.create_label(self.dashboard_frame, "Tableau de bord", "#0064d3", self.bg_color, 325, 70)
         
         data = self.dataset.all_to_dict()
-        nombre_eleves_total = len(data)
-       
-        print(f"{nombre_eleves_total} élèves") # A supprimer et remplacer par l'affichage dans l'interface graphique
         
-       
+        data_list = Listbox(self.dashboard_frame, bg=self.bg_color, font=("times new roman", 12), bd=0, relief=GROOVE, selectbackground="#0064d3")
+        data_list.place(x=0, y=100, width=1070, height=590)
+        
+        for item in data:
+            data_list.insert(END, item)
+            
+    #     data_list.bind("<<ListboxSelect>>", self.show_data)
+        
+    # def show_data(self, event):
+    #     """Affiche les détails d'une donnée."""
+        
+    #     data_list = event.widget
+    #     index = data_list.curselection()[0]
+    #     data = data_list.get(index)
+        
+    #     self.dashboard_frame.destroy()
+    #     self.dashboard_frame = self.__create_frame(300, 60, 1070, 690, self.bg_color)
+    #     self.create_label(self.dashboard_frame, "Tableau de bord", "#0064d3", self.bg_color, 325, 70)
+        
+    #     data_details = self.dataset.get_by_id(data)
+    #     data_details_label = Label(self.dashboard_frame, text=data_details, font=("times new roman", 12), bg=self.bg_color)
+    #     data_details_label.place(x=0, y=100, width=1070, height=590)
         
         
-    
+        
+          

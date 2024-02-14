@@ -39,6 +39,13 @@ class DataSet:
         """Converti et retourne la liste des classes Data sous forme de dictionnaire."""
         
         return [data.to_dict() for data in self.data_list]
+    
+    def get_by_id(self, id:int) -> Data:
+        """Récupère une donnée par son identifiant"""
+        
+        if self.data_list[id]:
+            return self.data_list[id]
+        return None
      
     
     def load_csv(self, file_path: str) -> None:
