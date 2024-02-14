@@ -57,7 +57,7 @@ class Interface:
         self.create_data_source_button()
         self.create_exit_button()
         self.create_dashboard_frame()
-        self.create_data_list_button()
+        # self.create_data_list_button()
       
       
     # ----------------- Méthodes de création de composants
