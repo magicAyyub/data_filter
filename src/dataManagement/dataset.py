@@ -13,6 +13,7 @@ class DataSet:
     """Représente un ensemble de donnée ansi que le traitement à effectuer sur ces derniers"""
     
     def __init__(self) -> None:
+        self.data_source_folder = "src/dataSources/"
         self.data_list = []
     
     def __str__(self) -> str:
@@ -25,11 +26,7 @@ class DataSet:
             else:
                 data_string += str(element)+"\n" 
         return data_string
-            
-     
-
-        
-        
+                
     def add_data(self, data:Data) -> None:
         """Rajoute une donnée dans l'ensemble de donnée"""
         
@@ -52,7 +49,7 @@ class DataSet:
         """Charge des données depuis un fichier CSV"""
         
         try:
-            with open(file_path, 'r') as file:
+            with open(file_path, 'r',encoding='utf-8') as file:
                 reader = csv.DictReader(file)
                 for row in reader:
                     data_dict = {key: DataConverter.convert_csv_value(value) for key, value in row.items()}
@@ -62,17 +59,24 @@ class DataSet:
       
       
         
-    def save_csv(self, file_path:str) -> None:
+    def save_csv(self, file_path:str, data_list = None) -> None:
         """Sauvegarde des données dans un fichier CSV"""
         
-        if len(self.data_list) > 0:
-            with open(file_path, 'w', newline='') as file:
-                fieldnames = self.all_to_dict()[0].keys()
+        if data_list:
+            with open(file_path, 'w', encoding='utf-8', newline='') as file:
+                fieldnames = data_list[0].keys()
                 writer = csv.DictWriter(file, fieldnames=fieldnames)
                 writer.writeheader()
-                writer.writerows(self.all_to_dict())
+                writer.writerows(data_list)
         else:
-            raise EmptyDataListError()
+            if len(self.data_list) > 0:
+                with open(file_path, 'w',encoding='utf-8', newline='') as file:
+                    fieldnames = self.all_to_dict()[0].keys()
+                    writer = csv.DictWriter(file, fieldnames=fieldnames)
+                    writer.writeheader()
+                    writer.writerows(self.all_to_dict())
+            else:
+                raise EmptyDataListError()
 
 
 
@@ -80,7 +84,7 @@ class DataSet:
         """charge des données depuis un fichier JSON"""
         
         try:
-            with open(file_path, 'r') as file:
+            with open(file_path, 'r', encoding='utf-8') as file:
                 for dict_data in json.load(file):
                     self.add_data(Data(dict_data))
         except FileNotFoundError:
@@ -88,14 +92,18 @@ class DataSet:
 
 
 
-    def save_json(self, file_path:str) -> None:
+    def save_json(self, file_path:str, data_list = None) -> None:
         """Sauvegarde des données dans un fichier JSON"""
         
-        if len(self.data_list) > 0:     
-            with open(file_path, 'w') as file:
-                json.dump(self.all_to_dict(), file, indent=2)     
-        else:
-            raise EmptyDataListError()
+        if data_list:
+            with open(file_path, 'w', encoding='utf-8') as file:
+                json.dump(data_list, file, indent=2)
+        else:     
+            if len(self.data_list) > 0:     
+                with open(file_path, 'w', encoding='utf-8') as file:
+                    json.dump(self.all_to_dict(), file, indent=2)     
+            else:
+                raise EmptyDataListError()
 
 
     def load_xml(self, file_path: str) -> None:
@@ -113,12 +121,12 @@ class DataSet:
 
 
 
-    def save_xml(self, file_path:str) -> None:
+    def save_xml(self, file_path:str, data_list = None) -> None:
         """Sauvegarde des données dans un fichier XML"""
         
-        if len(self.data_list) > 0:
+        if data_list:
             root = ET.Element("dataset")
-            for item in self.all_to_dict():
+            for item in data_list:
                 sub_element = ET.SubElement(root, "record")
                 for key, value in item.items():
                     child = ET.SubElement(sub_element, key)
@@ -126,7 +134,17 @@ class DataSet:
             tree = ET.ElementTree(root)
             tree.write(file_path)
         else:
-            raise EmptyDataListError()
+            if len(self.data_list) > 0:
+                root = ET.Element("dataset")
+                for item in self.all_to_dict():
+                    sub_element = ET.SubElement(root, "record")
+                    for key, value in item.items():
+                        child = ET.SubElement(sub_element, key)
+                        child.text = str(value)
+                tree = ET.ElementTree(root)
+                tree.write(file_path)
+            else:
+                raise EmptyDataListError()
 
 
 
@@ -134,21 +152,25 @@ class DataSet:
         """Charger des données depuis un fichier YAML"""
         
         try:
-            with open(file_path, 'r') as file:
+            with open(file_path, 'r',encoding='utf-8') as file:
                 for dict_data in  yaml.safe_load(file):
                     self.add_data(Data(dict_data))
         except FileNotFoundError:
             raise FileNotFoundError(f"Aucun fichier ne correspond à \"{file_path}\"")
       
         
-    def save_yaml(self, file_path:str) -> None:
+    def save_yaml(self, file_path:str, data_list = None) -> None:
         """Sauvegarder des données dans un fichier YAML"""
         
-        if len(self.data_list) > 0:      
-            with open(file_path, 'w') as file:
-                yaml.dump(self.all_to_dict(), file)      
+        if data_list:
+            with open(file_path, 'w', encoding='utf-8') as file:
+                yaml.dump(data_list, file)
         else:
-            raise EmptyDataListError()
+            if len(self.data_list) > 0:      
+                with open(file_path, 'w', encoding='utf-8') as file:
+                    yaml.dump(self.all_to_dict(), file)      
+            else:
+                raise EmptyDataListError()
         
     def filter_data(self, filter_method: Callable[[List[Data], Any], List[Data]], *args, **kwargs) -> List[Data]:
         """

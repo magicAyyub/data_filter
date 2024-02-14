@@ -1,0 +1,368 @@
+[
+  {
+    "first_name": "Adrienne",
+    "last_name": "Bertrand",
+    "age": 53,
+    "apprentice": true,
+    "grades": [
+      37,
+      47,
+      34,
+      71,
+      74
+    ]
+  },
+  {
+    "first_name": "\u00c9lisabeth",
+    "last_name": "Roy",
+    "age": 54,
+    "apprentice": false,
+    "grades": [
+      36,
+      89,
+      61,
+      87
+    ]
+  },
+  {
+    "first_name": "Jeannine",
+    "last_name": "Gosselin",
+    "age": 57,
+    "apprentice": false,
+    "grades": [
+      27,
+      87,
+      52
+    ]
+  },
+  {
+    "first_name": "Anne",
+    "last_name": "Lacombe",
+    "age": 57,
+    "apprentice": false,
+    "grades": [
+      51,
+      82,
+      50
+    ]
+  },
+  {
+    "first_name": "Gabrielle",
+    "last_name": "Becker",
+    "age": 23,
+    "apprentice": false,
+    "grades": [
+      19,
+      72,
+      2
+    ]
+  },
+  {
+    "first_name": "Fran\u00e7ois",
+    "last_name": "Barbier",
+    "age": 41,
+    "apprentice": true,
+    "grades": [
+      43,
+      1,
+      22,
+      72,
+      4
+    ]
+  },
+  {
+    "first_name": "Josette",
+    "last_name": "Berthelot",
+    "age": 19,
+    "apprentice": true,
+    "grades": [
+      40,
+      25,
+      58,
+      19,
+      39
+    ]
+  },
+  {
+    "first_name": "Anouk",
+    "last_name": "Marion",
+    "age": 41,
+    "apprentice": true,
+    "grades": [
+      69,
+      4,
+      11
+    ]
+  },
+  {
+    "first_name": "Fran\u00e7ois",
+    "last_name": "Martins",
+    "age": 42,
+    "apprentice": false,
+    "grades": [
+      24,
+      61,
+      29,
+      79
+    ]
+  },
+  {
+    "first_name": "Juliette",
+    "last_name": "Merle",
+    "age": 30,
+    "apprentice": false,
+    "grades": [
+      53,
+      11,
+      67,
+      19
+    ]
+  },
+  {
+    "first_name": "Philippe",
+    "last_name": "Cordier",
+    "age": 21,
+    "apprentice": false,
+    "grades": [
+      0,
+      14,
+      53,
+      32,
+      75
+    ]
+  },
+  {
+    "first_name": "Gilbert",
+    "last_name": "Lemoine",
+    "age": 37,
+    "apprentice": true,
+    "grades": [
+      83,
+      61,
+      87,
+      90,
+      32,
+      48
+    ]
+  },
+  {
+    "first_name": "Aim\u00e9",
+    "last_name": "Texier",
+    "age": 39,
+    "apprentice": true,
+    "grades": [
+      29,
+      19,
+      66
+    ]
+  },
+  {
+    "first_name": "Th\u00e9ophile",
+    "last_name": "Dumas",
+    "age": 52,
+    "apprentice": false,
+    "grades": [
+      28,
+      8,
+      96,
+      53,
+      6,
+      70
+    ]
+  },
+  {
+    "first_name": "St\u00e9phanie",
+    "last_name": "Vallet",
+    "age": 32,
+    "apprentice": true,
+    "grades": [
+      54,
+      11,
+      62
+    ]
+  },
+  {
+    "first_name": "Oc\u00e9ane",
+    "last_name": "Dumont",
+    "age": 39,
+    "apprentice": false,
+    "grades": [
+      31,
+      54,
+      62
+    ]
+  },
+  {
+    "first_name": "Zo\u00e9",
+    "last_name": "Raynaud",
+    "age": 49,
+    "apprentice": false,
+    "grades": [
+      27,
+      70,
+      16,
+      28,
+      67,
+      59
+    ]
+  },
+  {
+    "first_name": "Guillaume",
+    "last_name": "Pr\u00e9vost",
+    "age": 30,
+    "apprentice": true,
+    "grades": [
+      95,
+      35,
+      37,
+      17,
+      68
+    ]
+  },
+  {
+    "first_name": "Gr\u00e9goire",
+    "last_name": "Delorme",
+    "age": 29,
+    "apprentice": false,
+    "grades": [
+      85,
+      73,
+      15,
+      46,
+      81,
+      70
+    ]
+  },
+  {
+    "first_name": "Brigitte",
+    "last_name": "Briand",
+    "age": 27,
+    "apprentice": false,
+    "grades": [
+      85,
+      73,
+      47,
+      61,
+      22
+    ]
+  },
+  {
+    "first_name": "\u00c9douard",
+    "last_name": "David",
+    "age": 47,
+    "apprentice": true,
+    "grades": [
+      91,
+      55,
+      45,
+      41,
+      1,
+      32
+    ]
+  },
+  {
+    "first_name": "Olivie",
+    "last_name": "Leroy",
+    "age": 26,
+    "apprentice": false,
+    "grades": [
+      90,
+      48,
+      41,
+      16
+    ]
+  },
+  {
+    "first_name": "Gilbert",
+    "last_name": "L\u00e9vy",
+    "age": 55,
+    "apprentice": false,
+    "grades": [
+      83,
+      90,
+      85,
+      1
+    ]
+  },
+  {
+    "first_name": "Simone",
+    "last_name": "Masson",
+    "age": 22,
+    "apprentice": false,
+    "grades": [
+      13,
+      24,
+      28,
+      71
+    ]
+  },
+  {
+    "first_name": "Pierre",
+    "last_name": "Gros",
+    "age": 41,
+    "apprentice": true,
+    "grades": [
+      97,
+      17,
+      49,
+      37,
+      7
+    ]
+  },
+  {
+    "first_name": "Joseph",
+    "last_name": "Antoine",
+    "age": 24,
+    "apprentice": true,
+    "grades": [
+      58,
+      50,
+      65
+    ]
+  },
+  {
+    "first_name": "Georges",
+    "last_name": "Dias",
+    "age": 37,
+    "apprentice": false,
+    "grades": [
+      8,
+      43,
+      88,
+      84
+    ]
+  },
+  {
+    "first_name": "Brigitte",
+    "last_name": "Brun",
+    "age": 41,
+    "apprentice": false,
+    "grades": [
+      34,
+      66,
+      93
+    ]
+  },
+  {
+    "first_name": "Christiane",
+    "last_name": "Perret",
+    "age": 50,
+    "apprentice": false,
+    "grades": [
+      72,
+      29,
+      53
+    ]
+  },
+  {
+    "first_name": "H\u00e9l\u00e8ne",
+    "last_name": "Rey",
+    "age": 22,
+    "apprentice": false,
+    "grades": [
+      86,
+      20,
+      65
+    ]
+  }
+]

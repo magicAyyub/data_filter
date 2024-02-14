@@ -4,6 +4,7 @@ from tkinter import filedialog, messagebox
 from PIL import Image, ImageTk
 from matplotlib import pyplot as plt
 from matplotlib.backends.backend_tkagg import FigureCanvasTkAgg
+from faker import Faker
 import pygame
 
 from  src.dataManagement.dataset import DataSet 
@@ -240,6 +241,32 @@ class Interface:
     #     data_details = self.dataset.get_by_id(data)
     #     data_details_label = Label(self.dashboard_frame, text=data_details, font=("times new roman", 12), bg=self.bg_color)
     #     data_details_label.place(x=0, y=100, width=1070, height=590)
+    
+    
+    # -------------- Autre méthodes utiles 
+    
+    def generate_fake_data_sources(self, number_of_row:int) -> None:
+        """Génère des données aléatoires et les sauvegarde dans des fichiers de différents formats."""
+        
+        fake = Faker("fr_FR")
+
+        data = [] # Liste de dictionnaires
+
+        for i in range(number_of_row):
+            
+            row = {} # Dictionnaire de données aléatoires
+            row["first_name"] = fake.first_name()
+            row["last_name"] = fake.last_name()
+            row["age"] = fake.random_int(min=18, max=60)
+            row["apprentice"] = fake.boolean()
+            row["grades"] = [fake.random_int(min=0, max=100) for i in range(fake.random_int(min=3, max=6))]
+        
+            data.append(row)
+        
+        self.dataset.save_json(f"{self.dataset.data_source_folder}fake_data.json", data)
+        self.dataset.save_csv(f"{self.dataset.data_source_folder}fake_data.csv", data)
+        self.dataset.save_xml(f"{self.dataset.data_source_folder}fake_data.xml", data)
+        self.dataset.save_yaml(f"{self.dataset.data_source_folder}fake_data.yaml", data)
         
         
         

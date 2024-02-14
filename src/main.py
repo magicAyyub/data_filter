@@ -11,6 +11,7 @@ from  src.app.interface import Interface
 def main():
    
     app = Interface()
+    # app.generate_fake_data_sources(30) # Générer des données aléatoires
     app.run()
     
 if __name__ == '__main__':
