@@ -1,11 +1,13 @@
 import csv
 import json
+from PySide6.QtWidgets import QMessageBox
 import xml.etree.ElementTree as ET
 import yaml
 from typing import Any, Callable, List, Dict,Union
 from src.dataManagement.data import Data
 from src.dataManagement.dataconverter import DataConverter
 from  src.customException.save_exception import EmptyDataListError
+from src.customException.load_exception import UnsupportedFileTypeError
 from src.operations.stat import Stats
 
 
@@ -44,6 +46,22 @@ class DataSet:
             return self.data_list[id]
         return None
      
+    def load_data(self, file_path:str) -> None:
+        """Charge des données depuis un fichier."""
+        
+        file_type = file_path.split('.')[-1]
+        
+        if file_type == "json":
+            self.load_json(file_path)
+        elif file_type == "xml":
+            self.load_xml(file_path)
+        elif file_type == "csv":
+            self.load_csv(file_path)
+        elif file_type == "yaml":
+            self.load_yaml(file_path)
+        else:
+            QMessageBox.critical(self, "Erreur", "Format de fichier non supporté")
+            raise UnsupportedFileTypeError()
     
     def load_csv(self, file_path: str) -> None:
         """Charge des données depuis un fichier CSV"""
