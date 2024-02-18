@@ -3,6 +3,7 @@ import json
 from PySide6.QtWidgets import QMessageBox
 import xml.etree.ElementTree as ET
 import yaml
+import ast
 from typing import Any, Callable, List, Dict,Union
 from src.dataManagement.data import Data
 from src.dataManagement.dataconverter import DataConverter
@@ -139,11 +140,26 @@ class DataSet:
             root = tree.getroot()
             data = [{child.tag.split('}')[-1]: DataConverter.convert_xml_value(child) for child in item} for item in root]
             for dict_data in data:
+                # convert grades to list
+                if "grades" in dict_data:
+                    dict_data["grades"] = self.convert_string_to_list(dict_data["grades"])
                 self.add_data(Data(dict_data))
         except FileNotFoundError:
             raise FileNotFoundError(f"Aucun fichier ne correspond à \"{file_path}\"")
             
 
+    def convert_string_to_list(self, string_representation):
+        try:
+            # Using ast.literal_eval to safely evaluate the string as a Python literal
+            result_list = ast.literal_eval(string_representation)
+            if isinstance(result_list, list):
+                return result_list
+            else:
+                raise ValueError("The evaluated expression is not a list.")
+        except (SyntaxError, ValueError) as e:
+            # Handle the exception (e.g., if the string is not a valid Python literal)
+            print(f"Error converting string to list: {e}")
+        return None
 
 
     def save_xml(self, file_path:str, data_list = None) -> None:

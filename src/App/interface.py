@@ -50,7 +50,6 @@ class Interface(QMainWindow):
    
     def run(self) -> None:
         """Lancer l'application."""
-        
         self.show()
         self.app.exec()
         
@@ -224,8 +223,8 @@ class Interface(QMainWindow):
             "Number - Plus grand que": Filter.filter_by_number_greater_than,
             "Number - Plus petit que": Filter.filter_by_number_less_than,
             "Number - Égal à": Filter.filter_by_number_equal_to,
-            "Boolean - Est Vrai": Filter.filter_by_boolean,
-            "Boolean - Est Faux": Filter.filter_by_boolean,
+            "Boolean - Est Vrai": Filter.filter_by_boolean_true,
+            "Boolean - Est Faux": Filter.filter_by_boolean_false,
             "Liste - Minimum liste": Filter.filter_by_list_min,
             "Liste - Maximum liste": Filter.filter_by_list_max,
             "Liste - Moyenne liste": Filter.filter_by_list_average,
@@ -435,13 +434,13 @@ class Interface(QMainWindow):
             return
         
         if save_type == "json":
-            self.dataset.save_json(f"{save_folder}/scolar_data.json")
+            self.dataset.save_json(f"{save_folder}/scolar_data.json", self.dataset.all_to_dict(self.data))
         elif save_type == "csv":
-            self.dataset.save_csv(f"{save_folder}/scolar_data.csv")
+            self.dataset.save_csv(f"{save_folder}/scolar_data.csv", self.dataset.all_to_dict(self.data))
         elif save_type == "xml":
-            self.dataset.save_xml(f"{save_folder}/scolar_data.xml")
+            self.dataset.save_xml(f"{save_folder}/scolar_data.xml", self.dataset.all_to_dict(self.data))
         elif save_type == "yaml":
-            self.dataset.save_yaml(f"{save_folder}/scolar_data.yaml")
+            self.dataset.save_yaml(f"{save_folder}/scolar_data.yaml", self.dataset.all_to_dict(self.data))
         else:
             QMessageBox.critical(self, "Erreur", "Format de fichier non supporté")
             raise UnsupportedFileTypeError()
@@ -488,12 +487,6 @@ class Interface(QMainWindow):
         option = self.filter_option_combo.currentText()
  
         value = self.filter_value_edit.text()
-
-        try:
-            value = float(value)
-        except ValueError:
-            QMessageBox.critical(self, "Erreur", "Veuillez entrer un nombre pour le filtre.")
-            return
 
         field_types = {
             "first_name": str,

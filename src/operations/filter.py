@@ -17,21 +17,21 @@ class Filter:
         """Filtre les données en fonction de la présence d'une sous-chaîne dans une valeur de type chaîne de caractères associée à une clé spécifique."""
         if substring == "":
             return data_list
-        return [data for data in data_list if substring in data.get_field_value(key, "")]
+        return [data for data in data_list if substring.lower() in data.get_field_value(key, "").lower()]
 
     @staticmethod
     def filter_by_string_starts_with(data_list: List[Data], key: str, prefix: str) -> List[Data]:
         """Filtre les données en fonction du début d'une valeur de type chaîne de caractères associée à une clé spécifique."""
         if prefix == "":
             return data_list
-        return [data for data in data_list if data.get_field_value(key, "").startswith(prefix)]
+        return [data for data in data_list if data.get_field_value(key, "").lower().startswith(prefix.lower())]
 
     @staticmethod
     def filter_by_string_ends_with(data_list: List[Data], key: str, suffix: str) -> List[Data]:
         """Filtre les données en fonction de la fin d'une valeur de type chaîne de caractères associée à une clé spécifique."""
         if suffix == "":
             return data_list
-        return [data for data in data_list if data.get_field_value(key, "").endswith(suffix)]
+        return [data for data in data_list if data.get_field_value(key, "").lower().endswith(suffix.lower())]
 
     @staticmethod
     def filter_by_list_all_elements(data_list: List[Data], key: str, element: Any) -> List[Data]:
@@ -106,9 +106,13 @@ class Filter:
             return data_list
         return [data for data in data_list if data.get_field_value(key, 0) == value]
     
+    
     @staticmethod
-    def filter_by_boolean(data_list: List[Data], key: str, value: bool) -> List[Data]:
-        """Filtre les données en fonction d'une valeur booléenne spécifique."""
-        if value == "":
-            return data_list
-        return [data for data in data_list if data.get_field_value(key, False) == value]
+    def filter_by_boolean_true(data_list: List[Data], key: str, value = "") -> List[Data]:
+        """Filtre les données en fonction d'une valeur booléenne vraie."""
+        return [data for data in data_list if data.get_field_value(key, False)]
+    
+    @staticmethod
+    def filter_by_boolean_false(data_list: List[Data], key: str, value = "") -> List[Data]:
+        """Filtre les données en fonction d'une valeur booléenne fausse."""
+        return [data for data in data_list if not data.get_field_value(key, False)]
