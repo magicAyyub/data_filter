@@ -34,10 +34,17 @@ class DataSet:
         
         self.data_list.append(data)
     
-    def all_to_dict(self) -> list:
+    def all_to_dict(self, data_list = None) -> list:
         """Converti et retourne la liste des classes Data sous forme de dictionnaire."""
         
+        if data_list:
+            return [data.to_dict() for data in data_list]
         return [data.to_dict() for data in self.data_list]
+    
+    
+    def get_data_fields(self) -> List[str]:
+        
+        return self.data_list[0].get_fields()
     
     def get_by_id(self, id:int) -> Data:
         """Récupère une donnée par son identifiant"""

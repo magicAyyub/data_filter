@@ -39,13 +39,13 @@ class Filter:
     def filter_by_list_min(data_list: List[Data], key: str, min_value: Any) -> List[Data]:
         """Filtre les données en fonction de la valeur minimale d'une liste associée à une clé spécifique."""
         
-        return [data for data in data_list if min(data.get_field_value(key, [])) >= min_value]
+        return [data for data in data_list if min(data.get_field_value(key, [])) >= int(min_value)]
 
     @staticmethod
     def filter_by_list_max(data_list: List[Data], key: str, max_value: Any) -> List[Data]:
         """Filtre les données en fonction de la valeur maximale d'une liste associée à une clé spécifique."""
         
-        return [data for data in data_list if max(data.get_field_value(key, [])) <= max_value]
+        return [data for data in data_list if max(data.get_field_value(key, [])) <= int(max_value)]
 
     @staticmethod
     def filter_by_list_average(data_list: List[Data], key: str, average_condition: Callable[[Any], bool]) -> List[Data]:

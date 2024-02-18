@@ -12,6 +12,11 @@ class Data:
         """Retourne la classe sous forme de dictionnaire """
         
         return self.data
+
+    def get_fields(self) -> list:
+        """Retourne la liste des champs de la classe"""
+        
+        return list(self.data.keys())
     
     def get_field_value(self, key:str, default: any) -> any:
         """ Retourne la valeur d'un champ"""
