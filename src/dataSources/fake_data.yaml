@@ -1,276 +1,937 @@
-- age: 53
-  apprentice: true
-  first_name: Adrienne
-  grades:
-  - 37
-  - 47
-  - 34
-  - 71
-  - 74
-  last_name: Bertrand
-- age: 54
-  apprentice: false
-  first_name: "\xC9lisabeth"
-  grades:
-  - 36
-  - 89
-  - 61
-  - 87
-  last_name: Roy
-- age: 57
-  apprentice: false
-  first_name: Jeannine
-  grades:
-  - 27
-  - 87
-  - 52
-  last_name: Gosselin
-- age: 57
-  apprentice: false
-  first_name: Anne
-  grades:
-  - 51
-  - 82
-  - 50
-  last_name: Lacombe
-- age: 23
-  apprentice: false
-  first_name: Gabrielle
-  grades:
-  - 19
-  - 72
-  - 2
-  last_name: Becker
-- age: 41
-  apprentice: true
-  first_name: "Fran\xE7ois"
-  grades:
-  - 43
-  - 1
-  - 22
-  - 72
-  - 4
-  last_name: Barbier
-- age: 19
-  apprentice: true
-  first_name: Josette
-  grades:
-  - 40
-  - 25
-  - 58
-  - 19
-  - 39
-  last_name: Berthelot
-- age: 41
-  apprentice: true
-  first_name: Anouk
-  grades:
-  - 69
-  - 4
-  - 11
-  last_name: Marion
-- age: 42
-  apprentice: false
-  first_name: "Fran\xE7ois"
-  grades:
-  - 24
-  - 61
-  - 29
-  - 79
-  last_name: Martins
-- age: 30
-  apprentice: false
-  first_name: Juliette
-  grades:
-  - 53
-  - 11
-  - 67
-  - 19
-  last_name: Merle
-- age: 21
-  apprentice: false
-  first_name: Philippe
-  grades:
-  - 0
-  - 14
-  - 53
-  - 32
-  - 75
-  last_name: Cordier
-- age: 37
-  apprentice: true
-  first_name: Gilbert
-  grades:
-  - 83
-  - 61
-  - 87
-  - 90
-  - 32
-  - 48
-  last_name: Lemoine
-- age: 39
-  apprentice: true
-  first_name: "Aim\xE9"
-  grades:
-  - 29
-  - 19
-  - 66
-  last_name: Texier
 - age: 52
   apprentice: false
-  first_name: "Th\xE9ophile"
+  first_name: "Doroth\xE9e"
   grades:
-  - 28
-  - 8
-  - 96
-  - 53
-  - 6
-  - 70
-  last_name: Dumas
-- age: 32
-  apprentice: true
-  first_name: "St\xE9phanie"
-  grades:
-  - 54
-  - 11
-  - 62
-  last_name: Vallet
-- age: 39
-  apprentice: false
-  first_name: "Oc\xE9ane"
-  grades:
-  - 31
-  - 54
-  - 62
-  last_name: Dumont
-- age: 49
+  - 69
+  - 73
+  - 38
+  - 32
+  - 20
+  - 100
+  last_name: Reynaud
+- age: 28
   apprentice: false
   first_name: "Zo\xE9"
   grades:
-  - 27
-  - 70
-  - 16
-  - 28
-  - 67
-  - 59
-  last_name: Raynaud
-- age: 30
-  apprentice: true
-  first_name: Guillaume
-  grades:
   - 95
-  - 35
+  - 77
   - 37
-  - 17
-  - 68
-  last_name: "Pr\xE9vost"
-- age: 29
-  apprentice: false
-  first_name: "Gr\xE9goire"
+  - 29
+  - 66
+  last_name: Bigot
+- age: 56
+  apprentice: true
+  first_name: Margot
   grades:
-  - 85
-  - 73
-  - 15
-  - 46
-  - 81
-  - 70
-  last_name: Delorme
+  - 11
+  - 74
+  - 7
+  last_name: Blanchet
+- age: 54
+  apprentice: false
+  first_name: Catherine
+  grades:
+  - 55
+  - 86
+  - 4
+  - 42
+  last_name: Pinto
+- age: 25
+  apprentice: true
+  first_name: Olivier
+  grades:
+  - 23
+  - 27
+  - 55
+  last_name: Coulon
+- age: 57
+  apprentice: true
+  first_name: "Honor\xE9"
+  grades:
+  - 32
+  - 55
+  - 60
+  - 6
+  - 43
+  - 63
+  last_name: Gillet
 - age: 27
-  apprentice: false
-  first_name: Brigitte
+  apprentice: true
+  first_name: Charlotte
   grades:
-  - 85
-  - 73
+  - 84
+  - 7
+  - 67
+  last_name: Salmon
+- age: 25
+  apprentice: true
+  first_name: "\xC9lodie"
+  grades:
+  - 28
+  - 36
+  - 7
+  - 54
+  last_name: Cousin
+- age: 50
+  apprentice: true
+  first_name: Constance
+  grades:
+  - 27
+  - 3
+  - 46
+  - 99
+  - 35
+  - 77
+  last_name: Thibault
+- age: 58
+  apprentice: false
+  first_name: Jacques
+  grades:
+  - 97
   - 47
+  - 28
+  - 71
+  - 37
+  last_name: Sanchez
+- age: 51
+  apprentice: false
+  first_name: Alice
+  grades:
+  - 64
+  - 25
+  - 44
+  - 84
+  last_name: Cohen
+- age: 35
+  apprentice: true
+  first_name: Philippine
+  grades:
+  - 89
+  - 56
+  - 97
+  - 9
+  last_name: Gaillard
+- age: 57
+  apprentice: true
+  first_name: "Andr\xE9"
+  grades:
+  - 60
+  - 9
+  - 70
+  - 97
+  - 67
+  last_name: Lamy
+- age: 48
+  apprentice: false
+  first_name: "G\xE9rard"
+  grades:
+  - 9
+  - 43
+  - 93
+  - 19
+  - 13
+  - 40
+  last_name: Huet
+- age: 21
+  apprentice: false
+  first_name: "Th\xE9r\xE8se"
+  grades:
+  - 60
+  - 63
+  - 84
+  - 16
+  - 6
+  last_name: Bernard
+- age: 49
+  apprentice: false
+  first_name: Nicolas
+  grades:
+  - 62
+  - 20
+  - 45
+  - 5
+  last_name: Guilbert
+- age: 60
+  apprentice: false
+  first_name: Constance
+  grades:
+  - 34
+  - 80
+  - 72
+  - 55
+  last_name: Barre
+- age: 54
+  apprentice: true
+  first_name: Antoinette
+  grades:
+  - 70
+  - 67
+  - 45
+  last_name: Germain
+- age: 36
+  apprentice: true
+  first_name: Robert
+  grades:
+  - 32
+  - 92
+  - 7
+  - 19
+  - 17
+  last_name: Loiseau
+- age: 45
+  apprentice: false
+  first_name: "G\xE9rard"
+  grades:
+  - 44
+  - 18
+  - 87
+  - 77
+  last_name: Nicolas
+- age: 37
+  apprentice: true
+  first_name: Sabine
+  grades:
+  - 58
+  - 57
+  - 99
+  last_name: Meyer
+- age: 59
+  apprentice: false
+  first_name: William
+  grades:
+  - 63
+  - 8
+  - 30
+  last_name: Garnier
+- age: 46
+  apprentice: true
+  first_name: "Agn\xE8s"
+  grades:
+  - 59
+  - 39
+  - 38
   - 61
+  - 81
+  - 68
+  last_name: Guillou
+- age: 22
+  apprentice: true
+  first_name: Alphonse
+  grades:
+  - 45
   - 22
-  last_name: Briand
+  - 61
+  last_name: Maury
+- age: 30
+  apprentice: false
+  first_name: "Aim\xE9e"
+  grades:
+  - 56
+  - 26
+  - 78
+  - 57
+  last_name: Julien
+- age: 57
+  apprentice: false
+  first_name: Valentine
+  grades:
+  - 15
+  - 2
+  - 8
+  last_name: Tanguy
+- age: 33
+  apprentice: false
+  first_name: Sophie
+  grades:
+  - 79
+  - 54
+  - 60
+  - 63
+  - 74
+  last_name: Leclerc
+- age: 37
+  apprentice: false
+  first_name: "Honor\xE9"
+  grades:
+  - 33
+  - 72
+  - 10
+  - 35
+  - 2
+  - 38
+  last_name: Lebreton
+- age: 38
+  apprentice: false
+  first_name: "St\xE9phane"
+  grades:
+  - 87
+  - 24
+  - 57
+  - 61
+  last_name: Bousquet
+- age: 25
+  apprentice: true
+  first_name: Martine
+  grades:
+  - 70
+  - 90
+  - 24
+  last_name: Perrot
+- age: 41
+  apprentice: true
+  first_name: Audrey
+  grades:
+  - 53
+  - 82
+  - 89
+  - 86
+  last_name: Hernandez
 - age: 47
   apprentice: true
-  first_name: "\xC9douard"
+  first_name: Margot
   grades:
-  - 91
-  - 55
-  - 45
-  - 41
-  - 1
-  - 32
-  last_name: David
-- age: 26
+  - 40
+  - 35
+  - 67
+  - 23
+  last_name: Lucas
+- age: 39
   apprentice: false
-  first_name: Olivie
+  first_name: Susanne
   grades:
-  - 90
-  - 48
-  - 41
-  - 16
-  last_name: Leroy
+  - 78
+  - 8
+  - 75
+  - 0
+  - 32
+  - 23
+  last_name: Laroche
 - age: 55
   apprentice: false
+  first_name: "Cl\xE9mence"
+  grades:
+  - 89
+  - 31
+  - 72
+  - 26
+  last_name: Delmas
+- age: 30
+  apprentice: false
+  first_name: Margot
+  grades:
+  - 45
+  - 1
+  - 98
+  - 63
+  last_name: Blanchet
+- age: 29
+  apprentice: true
+  first_name: Auguste
+  grades:
+  - 12
+  - 54
+  - 94
+  - 72
+  last_name: Toussaint
+- age: 55
+  apprentice: true
+  first_name: Alfred
+  grades:
+  - 95
+  - 64
+  - 44
+  - 46
+  last_name: "L\xE9v\xEAque"
+- age: 20
+  apprentice: true
+  first_name: "Timoth\xE9e"
+  grades:
+  - 1
+  - 73
+  - 88
+  last_name: Baron
+- age: 18
+  apprentice: false
+  first_name: Sylvie
+  grades:
+  - 0
+  - 0
+  - 99
+  - 20
+  - 56
+  - 28
+  last_name: Humbert
+- age: 37
+  apprentice: true
+  first_name: "J\xE9r\xF4me"
+  grades:
+  - 91
+  - 14
+  - 20
+  - 83
+  - 30
+  last_name: Peltier
+- age: 31
+  apprentice: false
+  first_name: "Doroth\xE9e"
+  grades:
+  - 82
+  - 2
+  - 68
+  - 68
+  - 81
+  - 18
+  last_name: Thierry
+- age: 52
+  apprentice: true
+  first_name: Louise
+  grades:
+  - 17
+  - 45
+  - 43
+  - 52
+  - 42
+  last_name: Charrier
+- age: 47
+  apprentice: true
+  first_name: Michel
+  grades:
+  - 97
+  - 57
+  - 39
+  last_name: Jourdan
+- age: 45
+  apprentice: false
+  first_name: Nath
+  grades:
+  - 87
+  - 29
+  - 80
+  - 50
+  - 3
+  last_name: Nguyen
+- age: 45
+  apprentice: true
+  first_name: Antoine
+  grades:
+  - 13
+  - 28
+  - 34
+  last_name: Dubois
+- age: 29
+  apprentice: true
+  first_name: "No\xEBl"
+  grades:
+  - 89
+  - 8
+  - 56
+  - 38
+  last_name: Colas
+- age: 41
+  apprentice: true
+  first_name: "Val\xE9rie"
+  grades:
+  - 90
+  - 65
+  - 68
+  - 62
+  - 22
+  last_name: "Vall\xE9e"
+- age: 20
+  apprentice: true
+  first_name: Diane
+  grades:
+  - 40
+  - 54
+  - 23
+  - 27
+  - 2
+  - 62
+  last_name: Mallet
+- age: 54
+  apprentice: false
+  first_name: "Andr\xE9e"
+  grades:
+  - 87
+  - 85
+  - 21
+  - 25
+  last_name: Duhamel
+- age: 26
+  apprentice: false
+  first_name: Tristan
+  grades:
+  - 90
+  - 63
+  - 14
+  - 43
+  last_name: Barbe
+- age: 60
+  apprentice: false
+  first_name: Laurent
+  grades:
+  - 63
+  - 20
+  - 10
+  - 3
+  - 62
+  last_name: Marchal
+- age: 54
+  apprentice: true
+  first_name: Louise
+  grades:
+  - 91
+  - 9
+  - 87
+  last_name: Guibert
+- age: 33
+  apprentice: false
+  first_name: Alexandrie
+  grades:
+  - 79
+  - 58
+  - 10
+  last_name: Lopes
+- age: 36
+  apprentice: true
+  first_name: Michelle
+  grades:
+  - 53
+  - 31
+  - 10
+  - 25
+  - 3
+  - 99
+  last_name: Buisson
+- age: 22
+  apprentice: false
+  first_name: "Ana\xEFs"
+  grades:
+  - 19
+  - 42
+  - 53
+  last_name: Jacob
+- age: 19
+  apprentice: true
+  first_name: "Aim\xE9e"
+  grades:
+  - 48
+  - 54
+  - 84
+  - 79
+  last_name: Meunier
+- age: 26
+  apprentice: false
+  first_name: David
+  grades:
+  - 38
+  - 37
+  - 42
+  last_name: Martin
+- age: 27
+  apprentice: true
+  first_name: "Andr\xE9"
+  grades:
+  - 94
+  - 81
+  - 73
+  - 69
+  last_name: Fischer
+- age: 47
+  apprentice: false
+  first_name: Susanne
+  grades:
+  - 40
+  - 2
+  - 17
+  - 96
+  - 87
+  - 34
+  last_name: Vasseur
+- age: 29
+  apprentice: true
+  first_name: Isabelle
+  grades:
+  - 45
+  - 58
+  - 62
+  - 86
+  - 17
+  - 64
+  last_name: Perrier
+- age: 30
+  apprentice: false
+  first_name: "Mich\xE8le"
+  grades:
+  - 77
+  - 4
+  - 15
+  - 27
+  last_name: Arnaud
+- age: 36
+  apprentice: true
+  first_name: Claudine
+  grades:
+  - 86
+  - 44
+  - 34
+  - 0
+  last_name: Albert
+- age: 50
+  apprentice: false
+  first_name: Paul
+  grades:
+  - 67
+  - 27
+  - 55
+  - 76
+  - 4
+  - 0
+  last_name: Gomes
+- age: 58
+  apprentice: true
+  first_name: Odette
+  grades:
+  - 88
+  - 39
+  - 81
+  - 39
+  - 2
+  last_name: Pineau
+- age: 42
+  apprentice: false
+  first_name: Matthieu
+  grades:
+  - 86
+  - 60
+  - 96
+  - 70
+  - 66
+  - 45
+  last_name: Techer
+- age: 53
+  apprentice: true
+  first_name: "Aim\xE9e"
+  grades:
+  - 46
+  - 40
+  - 6
+  - 77
+  - 15
+  - 36
+  last_name: Leroy
+- age: 48
+  apprentice: false
+  first_name: Daniel
+  grades:
+  - 7
+  - 82
+  - 26
+  - 86
+  - 4
+  last_name: Becker
+- age: 53
+  apprentice: false
+  first_name: Christelle
+  grades:
+  - 40
+  - 89
+  - 48
+  last_name: Verdier
+- age: 28
+  apprentice: false
+  first_name: "Ad\xE9la\xEFde"
+  grades:
+  - 25
+  - 52
+  - 96
+  last_name: Robert
+- age: 38
+  apprentice: true
+  first_name: Colette
+  grades:
+  - 63
+  - 80
+  - 46
+  - 52
+  - 88
+  - 70
+  last_name: Dufour
+- age: 28
+  apprentice: true
+  first_name: Marcelle
+  grades:
+  - 33
+  - 71
+  - 20
+  last_name: Leclerc
+- age: 25
+  apprentice: false
+  first_name: Adrienne
+  grades:
+  - 18
+  - 100
+  - 68
+  - 37
+  last_name: Guillon
+- age: 47
+  apprentice: true
+  first_name: Philippine
+  grades:
+  - 70
+  - 44
+  - 62
+  last_name: Masson
+- age: 34
+  apprentice: true
+  first_name: Henriette
+  grades:
+  - 96
+  - 3
+  - 36
+  - 91
+  - 33
+  last_name: Lacombe
+- age: 54
+  apprentice: true
+  first_name: Christiane
+  grades:
+  - 47
+  - 98
+  - 88
+  last_name: "Herv\xE9"
+- age: 33
+  apprentice: false
+  first_name: Suzanne
+  grades:
+  - 48
+  - 43
+  - 4
+  last_name: Collin
+- age: 20
+  apprentice: false
+  first_name: Gilles
+  grades:
+  - 59
+  - 78
+  - 64
+  - 37
+  last_name: Hernandez
+- age: 57
+  apprentice: true
+  first_name: "C\xE9lina"
+  grades:
+  - 49
+  - 74
+  - 98
+  last_name: Raynaud
+- age: 28
+  apprentice: true
+  first_name: Thibault
+  grades:
+  - 12
+  - 11
+  - 19
+  last_name: Carpentier
+- age: 51
+  apprentice: false
+  first_name: Jeannine
+  grades:
+  - 56
+  - 56
+  - 41
+  last_name: Guyon
+- age: 58
+  apprentice: false
+  first_name: Sabine
+  grades:
+  - 74
+  - 73
+  - 18
+  last_name: Raynaud
+- age: 34
+  apprentice: true
+  first_name: "C\xE9lina"
+  grades:
+  - 18
+  - 94
+  - 64
+  last_name: Rousset
+- age: 27
+  apprentice: true
+  first_name: "No\xE9mi"
+  grades:
+  - 15
+  - 28
+  - 71
+  - 95
+  - 64
+  - 46
+  last_name: Imbert
+- age: 21
+  apprentice: false
+  first_name: Maggie
+  grades:
+  - 42
+  - 47
+  - 80
+  last_name: Techer
+- age: 21
+  apprentice: true
   first_name: Gilbert
   grades:
-  - 83
-  - 90
-  - 85
-  - 1
-  last_name: "L\xE9vy"
-- age: 22
+  - 48
+  - 81
+  - 53
+  last_name: Roussel
+- age: 42
+  apprentice: false
+  first_name: Christine
+  grades:
+  - 4
+  - 63
+  - 72
+  - 25
+  - 52
+  - 73
+  last_name: Gonzalez
+- age: 54
+  apprentice: false
+  first_name: Pauline
+  grades:
+  - 64
+  - 73
+  - 0
+  - 76
+  last_name: Paul
+- age: 20
+  apprentice: false
+  first_name: Auguste
+  grades:
+  - 69
+  - 94
+  - 40
+  - 46
+  - 22
+  last_name: Valette
+- age: 51
   apprentice: false
   first_name: Simone
   grades:
-  - 13
-  - 24
-  - 28
-  - 71
-  last_name: Masson
-- age: 41
-  apprentice: true
-  first_name: Pierre
-  grades:
-  - 97
+  - 21
+  - 77
+  - 89
   - 17
-  - 49
-  - 37
-  - 7
-  last_name: Gros
-- age: 24
+  last_name: Allard
+- age: 48
+  apprentice: false
+  first_name: "Doroth\xE9e"
+  grades:
+  - 99
+  - 74
+  - 9
+  - 4
+  - 33
+  last_name: Camus
+- age: 36
   apprentice: true
-  first_name: Joseph
-  grades:
-  - 58
-  - 50
-  - 65
-  last_name: Antoine
-- age: 37
-  apprentice: false
-  first_name: Georges
-  grades:
-  - 8
-  - 43
-  - 88
-  - 84
-  last_name: Dias
-- age: 41
-  apprentice: false
-  first_name: Brigitte
+  first_name: Claude
   grades:
   - 34
-  - 66
-  - 93
-  last_name: Brun
-- age: 50
-  apprentice: false
-  first_name: Christiane
+  - 17
+  - 45
+  - 60
+  last_name: Martins
+- age: 60
+  apprentice: true
+  first_name: "Cl\xE9mence"
   grades:
-  - 72
+  - 57
+  - 5
+  - 25
+  - 38
+  - 8
+  - 38
+  last_name: Hebert
+- age: 56
+  apprentice: false
+  first_name: Marcelle
+  grades:
+  - 24
+  - 27
+  - 50
+  - 39
+  last_name: Aubry
+- age: 59
+  apprentice: true
+  first_name: Nath
+  grades:
+  - 63
+  - 77
+  - 75
   - 29
-  - 53
-  last_name: Perret
-- age: 22
-  apprentice: false
-  first_name: "H\xE9l\xE8ne"
-  grades:
-  - 86
-  - 20
   - 65
-  last_name: Rey
+  - 43
+  last_name: Denis
+- age: 32
+  apprentice: false
+  first_name: Margot
+  grades:
+  - 67
+  - 54
+  - 89
+  - 45
+  - 64
+  - 68
+  last_name: Pierre
+- age: 46
+  apprentice: false
+  first_name: Margot
+  grades:
+  - 76
+  - 10
+  - 39
+  - 62
+  - 10
+  - 75
+  last_name: Lenoir
+- age: 33
+  apprentice: true
+  first_name: Olivie
+  grades:
+  - 91
+  - 35
+  - 24
+  - 2
+  - 52
+  last_name: Maillard
+- age: 29
+  apprentice: false
+  first_name: Susanne
+  grades:
+  - 3
+  - 34
+  - 12
+  last_name: Bouchet
+- age: 48
+  apprentice: false
+  first_name: "\xC9dith"
+  grades:
+  - 43
+  - 74
+  - 78
+  - 89
+  - 72
+  - 82
+  last_name: Evrard
+- age: 27
+  apprentice: false
+  first_name: "Beno\xEEt"
+  grades:
+  - 32
+  - 51
+  - 43
+  - 14
+  - 46
+  - 74
+  last_name: Marchand

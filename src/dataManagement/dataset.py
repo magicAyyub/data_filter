@@ -225,10 +225,12 @@ class DataSet:
         sorted_data = sort_function(self.data_list, *args, **kwargs)
         return sorted_data
 
-    def generate_stats(self) -> Dict[str, Dict[str, Union[float, int, Dict[Any, int]]]]:
+    def generate_stats(self, data_list = None) -> Dict[str, Dict[str, Union[float, int, Dict[Any, int]]]]:
         """Génère des statistiques pour l'ensemble des champs de la DataSet.
 
         Returns:
             Dict[str, Dict[str, Union[float, int, Dict[Any, int]]]]: Un dictionnaire contenant les statistiques pour chaque champ.
         """
+        if data_list:
+            return Stats.generate_stats(data_list)
         return Stats.generate_stats(self.data_list)
