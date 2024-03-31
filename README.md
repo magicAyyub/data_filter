@@ -2,31 +2,29 @@
 
 ## Description
 
-The aim of this project is to create a program for loading, saving, filtering, sorting and displaying data from files in CSV, JSON, XML or YAML format.
+Projet Data Filter aims to streamline data management tasks by providing a versatile program for loading, saving, filtering, sorting, and displaying data from various file formats including CSV, JSON, XML, or YAML.
 
-## Project structure
+## 📁 Project Structure
+- `data_management`: Houses the `Data` and `DataSet` classes responsible for efficient data handling.
+- `operations`: Includes the `Filter`, `Sorter`, and `Stats` classes for performing various operations on data with ease.
+- `interfaces`: Hosts the `Interface` class, offering a user-friendly interface for seamless interaction.
+- `history`: Manages the `History` class for keeping track of filter history, ensuring easy reference.
 
-The project is organized into several packages:
-
-- `data_management`: Contains the `Data` and `DataSet` classes for data management.
-- `operations` : Contains the `Filter`, `Sorter` and `Stats` classes for performing operations on data.
-- `interfaces`: Contains the `Interface` class for user interaction.
-- `history` : Contains the `History` class for filter history management
-
-## Installation
-
-To install this project, you can clone this repository using the following command:
-
+## 💻 Installation
+To install the project, simply clone the repository using the following command:
 ```bash
-git clone https://github.com/votre_nom_d_utilisateur/data_filter.git
+git clone https://github.com/your_username/data_filter.git
 ```
 
-## Usage
-
-To run this program, navigate to the project directory and execute the `main.py` file with Python :
+## 🚀 Usage
+Navigate to the project directory and run the `main.py` file using Python:
 ```bash
-cd data_filter python main.py
+cd data_filter
+python main.py
 ```
+Get ready to dive into effortless data management with Projet Data Filter!
+
+
 
 
 
