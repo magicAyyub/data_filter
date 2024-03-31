@@ -11,7 +11,7 @@ The project is organized into several packages:
 - `data_management`: Contains the `Data` and `DataSet` classes for data management.
 - `operations` : Contains the `Filter`, `Sorter` and `Stats` classes for performing operations on data.
 - `interfaces`: Contains the `Interface` class for user interaction.
-- history` : Contains the `History` class for filter history management
+- `history` : Contains the `History` class for filter history management
 
 ## Installation
 
