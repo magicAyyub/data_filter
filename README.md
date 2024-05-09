@@ -13,7 +13,7 @@ Projet Data Filter aims to streamline data management tasks by providing a versa
 ## 💻 Installation
 To install the project, simply clone the repository using the following command:
 ```bash
-git clone https://github.com/your_username/data_filter.git
+git clone https://github.com/magicAyyub/data_filter.git
 ```
 
 ## 🚀 Usage
